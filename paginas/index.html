@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/estilos/reset.css">
+    <link rel="stylesheet" href="/estilos/style.css">
+    <title>Encriptador</title>
+</head>
+<body>
+    <header>
+        <h1>Encriptador</h1>
+    </header>
+    <main>
+        <p>Esta página web es dedicada a encriptar y desencriptar mensajes </p>
+        <form action="/funcion/encript.js" method="post">
+            <label for="mensaje">Mensaje:</label>
+            <input type="text" name="mensaje" id="mensaje" required>
+            <label for="clave">Clave:</label>
+            <input type="text" name="clave" id="clave" required>
+            <input type="submit" value="Encriptar" onclick="encriptarcesar()">
+        </form>
+        <form action="/funcion/encript.js" method="post">
+            <label for="mensaje">Mensaje:</label>
+            <input type="text" name="mensaje" id="mensaje" required>
+            <label for="clave">Clave:</label>
+            <input type="text" name="clave" id="clave" required>
+            <input type="submit" value="Desencriptar" onclick="desencriptarcesar()">
+        </form>
+        <form action="/funcion/encript.js">
+            <label for="salida">Mensaje salida</label>
+            <input type="text" name="salida" id="salida" readonly>
+            <input type="submit" value="Limpiar" onclick="limpiar()">
+        </form>
+    </main>
+    <footer>
+        <p>Desarrollado por <a href="">Ylhuicatzi Padua Tonatiuh</a></p>
+    </footer>
+    <script src="/funcion/encript.js"></script>
+</body>
+</html>
