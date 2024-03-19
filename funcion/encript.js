@@ -40,6 +40,7 @@ function desencriptarcesar(texto, desplazamiento) {
     return resultado;
 }
 
+//Función para encriptar el texto
 function btnencrypt() {
     texto = document.getElementById('entrada').value;
     desplazamiento = parseInt(document.getElementById('clave').value);
@@ -50,6 +51,7 @@ function btnencrypt() {
     document.getElementById('resultado').setAttribute('onlyread', 'true');
 }
 
+//Función para desencriptar el texto
 function btndecrypt() {
     texto = document.getElementById('entrada').value;
     desplazamiento = parseInt(document.getElementById('clave').value);
