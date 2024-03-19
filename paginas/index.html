@@ -12,15 +12,27 @@
         <h1>Encriptador</h1>
     </header>
     <main>
-        <p>Esta página web es dedicada a encriptar y desencriptar mensajes </p>
+        <div class="h2">
+            <h2>Encripta o desencripta tu mensaje</h2>
+        </div>	
+        <div class="mensajes">
             <label for="entrada">Mensaje</label>
-            <textarea cols="70" rows="10" name="entrada" id="entrada" required></textarea>
+            <textarea cols="70" rows="10" name="entrada" id="entrada" required ></textarea>
+        </div>
+        <div class="clave">
             <label for="clave">Clave</label>
             <input type="number" name="clave" min="1" max="27" id="clave" required>
-            <label for="resultado">Mensaje salida</label>
-            <textarea cols="70" rows="10" name="resultado" id="resultado" readonly></textarea>
-            <input type="submit" value="Encriptar" onclick="btnencrypt()">
-            <input type="submit" value="Desencriptar" onclick="btndecrypt()">
+        </div>
+        <div class="botones">
+            <input class="btn" type="submit" value="Encriptar" onclick="btnencrypt()">
+            <input class="btn" type="submit" value="Desencriptar" onclick="btndecrypt()">
+            <input class="btn" type="submit" value="Limpiar" onclick="btnclear()">
+            <input class="btn" type="submit" value="copiar" onclick="btncopy()">
+        </div>
+        <div class="mensajes">
+            <label for="salida">Resultado</label>
+            <textarea cols="70" rows="10" name="salida" id="salida" readonly></textarea>
+        </div>
     </main>
     <footer>
         <p>Desarrollado por <a href="">Ylhuicatzi Padua Tonatiuh</a></p>

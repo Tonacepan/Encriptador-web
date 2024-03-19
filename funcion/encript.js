@@ -45,10 +45,10 @@ function btnencrypt() {
     texto = document.getElementById('entrada').value;
     desplazamiento = parseInt(document.getElementById('clave').value);
     resultado = encriptarcesar(texto, desplazamiento);
-    document.getElementById('resultado').removeAttribute('onlyread', 'false');
+    document.getElementById('salida').removeAttribute('onlyread', 'false');
     console.log(resultado);
-    document.getElementById('resultado').textContent = resultado;
-    document.getElementById('resultado').setAttribute('onlyread', 'true');
+    document.getElementById('salida').textContent = resultado;
+    document.getElementById('salida').setAttribute('onlyread', 'true');
 }
 
 //Función para desencriptar el texto
@@ -56,8 +56,26 @@ function btndecrypt() {
     texto = document.getElementById('entrada').value;
     desplazamiento = parseInt(document.getElementById('clave').value);
     resultado = desencriptarcesar(texto, desplazamiento);
-    document.getElementById('resultado').removeAttribute('onlyread', 'false');
+    document.getElementById('salida').removeAttribute('onlyread', 'false');
     console.log(resultado);
-    document.getElementById('resultado').textContent = resultado;
-    document.getElementById('resultado').setAttribute('onlyread', 'true');
+    document.getElementById('salida').textContent = resultado;
+    document.getElementById('salida').setAttribute('onlyread', 'true');
+}
+
+//Función para limpiar el texto
+function btnclear() {
+    document.getElementById('entrada').value = "";
+    document.getElementById('clave').value = "";
+    document.getElementById('salida').removeAttribute('onlyread', 'false');
+    document.getElementById('salida').textContent = "";
+    document.getElementById('salida').setAttribute('onlyread', 'true');
+}
+
+//Función para copiar el texto
+function btncopy() {
+    let copyText = document.getElementById("salida");
+    copyText.select();
+    copyText.setSelectionRange(0, 99999);
+    document.execCommand("copy");
+    alert("Texto copiado: " + copyText.value);
 }
