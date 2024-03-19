@@ -13,25 +13,14 @@
     </header>
     <main>
         <p>Esta página web es dedicada a encriptar y desencriptar mensajes </p>
-        <form action="/funcion/encript.js" method="post">
-            <label for="mensaje">Mensaje:</label>
-            <input type="text" name="mensaje" id="mensaje" required>
-            <label for="clave">Clave:</label>
-            <input type="text" name="clave" id="clave" required>
-            <input type="submit" value="Encriptar" onclick="encriptarcesar()">
-        </form>
-        <form action="/funcion/encript.js" method="post">
-            <label for="mensaje">Mensaje:</label>
-            <input type="text" name="mensaje" id="mensaje" required>
-            <label for="clave">Clave:</label>
-            <input type="text" name="clave" id="clave" required>
-            <input type="submit" value="Desencriptar" onclick="desencriptarcesar()">
-        </form>
-        <form action="/funcion/encript.js">
-            <label for="salida">Mensaje salida</label>
-            <input type="text" name="salida" id="salida" readonly>
-            <input type="submit" value="Limpiar" onclick="limpiar()">
-        </form>
+            <label for="entrada">Mensaje</label>
+            <textarea cols="70" rows="10" name="entrada" id="entrada" required></textarea>
+            <label for="clave">Clave</label>
+            <input type="number" name="clave" min="1" max="27" id="clave" required>
+            <label for="resultado">Mensaje salida</label>
+            <textarea cols="70" rows="10" name="resultado" id="resultado" readonly></textarea>
+            <input type="submit" value="Encriptar" onclick="btnencrypt()">
+            <input type="submit" value="Desencriptar" onclick="btndecrypt()">
     </main>
     <footer>
         <p>Desarrollado por <a href="">Ylhuicatzi Padua Tonatiuh</a></p>
