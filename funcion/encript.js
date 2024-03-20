@@ -2,12 +2,7 @@
 let texto = "";
 let desplazamiento = 0;
 let resultado = "";
-//Función para asignar el texto de salida
-function asignartexto(elemento, texto) {
-    let titulo = document.querySelector(elemento);
-    titulo.textContent = texto;
-    return;
-}
+let textoModificado = "";
 //Función para encriptar el texto
 function encriptarcesar(texto, desplazamiento) {
     let resultado = "";
@@ -22,6 +17,13 @@ function encriptarcesar(texto, desplazamiento) {
         }
     }
     return resultado;
+}
+//Función para validar que el texto sea solo letras minúsculas
+function validarMinusculas(event) {
+    texto = event.target.value;
+    // Remplaza cualquier carácter que no sea una letra minúscula por una cadena vacía
+    textoModificado = texto.replace(/[^a-z]/g, '');
+    event.target.value = textoModificado;
 }
 
 //Función para desencriptar el texto
@@ -45,6 +47,7 @@ function btnencrypt() {
     texto = document.getElementById('entrada').value;
     desplazamiento = parseInt(document.getElementById('clave').value);
     resultado = encriptarcesar(texto, desplazamiento);
+    
     document.getElementById('salida').removeAttribute('onlyread', 'false');
     console.log(resultado);
     document.getElementById('salida').textContent = resultado;
